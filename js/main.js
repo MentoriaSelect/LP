@@ -134,6 +134,54 @@ form?.addEventListener('submit', async e => {
 });
 
 // ============================================================
+// LIGHTBOX
+// ============================================================
+const lightbox     = document.getElementById('lightbox');
+const lightboxImg  = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const figures      = [...document.querySelectorAll('.transformacao[data-lightbox]')];
+let currentIndex   = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  lightboxImg.src = figures[index].dataset.lightbox;
+  lightboxImg.alt = figures[index].querySelector('img').alt;
+  lightbox.hidden = false;
+  document.body.style.overflow = 'hidden';
+  lightboxClose.focus();
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  document.body.style.overflow = '';
+}
+
+function showPrev() { openLightbox((currentIndex - 1 + figures.length) % figures.length); }
+function showNext() { openLightbox((currentIndex + 1) % figures.length); }
+
+figures.forEach((fig, i) => {
+  fig.setAttribute('role', 'button');
+  fig.setAttribute('tabindex', '0');
+  fig.addEventListener('click', () => openLightbox(i));
+  fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(i); });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', showPrev);
+lightboxNext.addEventListener('click', showNext);
+
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+  if (lightbox.hidden) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowLeft')  showPrev();
+  if (e.key === 'ArrowRight') showNext();
+});
+
+// ============================================================
 // INTERSECTION OBSERVER — subtle fade-in on scroll
 // ============================================================
 const observer = new IntersectionObserver(entries => {
