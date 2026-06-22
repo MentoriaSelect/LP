@@ -245,6 +245,11 @@ address { font-style: normal; }
 ============================================================ */
 .hero {
   background-color: var(--dark);
+  background-image:
+    linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.92)),
+    url('../public/imagens/Clinica%20Dias%20Junior%205.jpg');
+  background-size: cover;
+  background-position: center;
   min-height: 100svh;
   display: flex;
   align-items: center;
@@ -257,33 +262,27 @@ address { font-style: normal; }
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
-  padding-block: clamp(3rem, 8vw, 5rem);
+  padding-block: clamp(2rem, 5vw, 3.5rem);
 }
 
 .hero__text { order: 2; }
 
 .hero__title {
   font-family: var(--font-title);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--white);
   margin-block: 1rem 1.5rem;
-}
-
-.hero__title-line1 {
-  display: block;
-  font-weight: 300;
-  color: rgba(255,255,255,0.9);
 }
 
 .hero__title em {
   display: block;
   font-style: italic;
   font-weight: 400;
-  font-size: 1.15em;
+  font-size: 1.1em;
   color: var(--gold-light);
-  margin-top: 0.15em;
+  margin-top: 0.1em;
 }
 
 .hero__sub {
@@ -550,15 +549,38 @@ address { font-style: normal; }
 .metodo__inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
-.metodo__image img {
-  width: 100%;
-  height: 480px;
+/* método overlapping photos */
+.metodo__images {
+  position: relative;
+  height: 520px;
+}
+
+.metodo__img-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88%;
+  height: 460px;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius-lg);
+}
+
+.metodo__img-over {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 56%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius-lg);
+  border: 4px solid var(--white);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
 }
 
 .metodo__content p {
@@ -574,6 +596,9 @@ address { font-style: normal; }
 
 @media (min-width: 900px) {
   .metodo__inner { grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .metodo__images { height: 580px; }
+  .metodo__img-main { height: 520px; }
+  .metodo__img-over { height: 280px; }
 }
 
 /* ============================================================
@@ -761,19 +786,42 @@ address { font-style: normal; }
   margin-bottom: 1.5rem;
 }
 
+.transformacao {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
 .transformacao img {
   width: 100%;
   height: 280px;
   object-fit: cover;
+  object-position: top center;
   border-radius: var(--radius-lg);
   opacity: 0.88;
-  transition: opacity var(--transition), transform var(--transition);
+  transition: opacity var(--transition), transform 0.4s ease;
+  display: block;
 }
 
 .transformacao:hover img {
   opacity: 1;
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
+
+.transformacao__zoom {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity var(--transition);
+  border-radius: var(--radius-lg);
+}
+
+.transformacao:hover .transformacao__zoom { opacity: 1; }
 
 .transformacoes__disclaimer {
   font-size: 0.75rem;
@@ -1104,6 +1152,64 @@ address { font-style: normal; }
 }
 
 /* ============================================================
+   LIGHTBOX
+============================================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox__img {
+  max-width: min(90vw, 700px);
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: background var(--transition);
+}
+
+.lightbox__close:hover { background: rgba(255,255,255,0.2); }
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: background var(--transition);
+}
+
+.lightbox__nav:hover { background: rgba(255,255,255,0.2); }
+.lightbox__prev { left: 1.25rem; }
+.lightbox__next { right: 1.25rem; }
+
+/* ============================================================
    WHATSAPP FLOAT
 ============================================================ */
 .whatsapp-float {
@@ -1120,6 +1226,12 @@ address { font-style: normal; }
   justify-content: center;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
   transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .whatsapp-float:hover {
