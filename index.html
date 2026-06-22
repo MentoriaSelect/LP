@@ -63,14 +63,14 @@
       <div class="hero__text">
         <p class="label">Medicina Integrativa · Juiz de Fora – MG</p>
         <h1 class="hero__title">
-          Seu corpo tem<br>
-          <em>uma resposta.</em><br>
-          Nós encontramos ela.
+          <span class="hero__title-line1">O que outros médicos</span>
+          <span class="hero__title-line1">não encontraram,</span>
+          <em>nós investigamos.</em>
         </h1>
         <p class="hero__sub">
-          Protocolos científicos e personalizados para quem busca longevidade ativa,
-          desempenho real e saúde de alta performance — com 20 anos de experiência
-          e mais de 3.000 implantes realizados.
+          Há 20 anos, o Dr. Dias Junior desenvolve protocolos exclusivos para pacientes
+          que não se contentam com respostas genéricas — e finalmente encontram
+          a transformação que buscavam.
         </p>
         <div class="hero__ctas">
           <a href="#contato" class="btn btn--gold">Agendar Consulta Estratégica</a>
@@ -228,23 +228,6 @@
   <section class="sobre" id="sobre">
     <div class="container">
       <div class="sobre__inner">
-        <div class="sobre__images">
-          <div class="sobre__photo">
-            <img
-              src="public/imagens/Dr%20Dias%20Junior%2059.JPG"
-              alt="Dr. José Carlos Dias Junior"
-              loading="lazy"
-            >
-          </div>
-          <div class="sobre__team">
-            <img
-              src="public/imagens/Clinica%20Dias%20Junior%202.jpg"
-              alt="Equipe Clínica Dias Junior"
-              loading="lazy"
-            >
-            <p class="sobre__team-label">Equipe multidisciplinar</p>
-          </div>
-        </div>
         <div class="sobre__content">
           <span class="label">Sobre o Médico</span>
           <h2 class="section-title">Dr. José Carlos<br>Dias Junior</h2>
@@ -258,6 +241,23 @@
             <span class="badge">SBME · Medicina Estética</span>
           </div>
           <a href="#contato" class="btn btn--gold">Agendar com o Dr. Dias Junior</a>
+        </div>
+        <div class="sobre__images">
+          <div class="sobre__photo">
+            <img
+              src="public/imagens/Dr%20Dias%20Junior%2059.JPG"
+              alt="Dr. José Carlos Dias Junior"
+              loading="lazy"
+            >
+            <div class="sobre__photo-caption">
+              <img
+                src="public/imagens/Clinica%20Dias%20Junior%202.jpg"
+                alt="Equipe Clínica Dias Junior"
+                loading="lazy"
+              >
+              <p class="sobre__team-label">Nossa equipe multidisciplinar</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -332,6 +332,12 @@
           </figure>
           <figure class="transformacao">
             <img src="public/imagens/Relato%206.jpeg" alt="Transformação — Paciente 6" loading="lazy">
+          </figure>
+          <figure class="transformacao">
+            <img src="public/imagens/Relato%207.jpeg" alt="Transformação — Paciente 7" loading="lazy">
+          </figure>
+          <figure class="transformacao">
+            <img src="public/imagens/Relato%208.jpeg" alt="Transformação — Paciente 8" loading="lazy">
           </figure>
         </div>
         <p class="transformacoes__disclaimer">* Resultados individuais. Os protocolos são personalizados e os resultados podem variar conforme o histórico e perfil de cada paciente.</p>
@@ -575,9 +581,11 @@
     rel="noopener noreferrer"
     aria-label="Falar no WhatsApp"
   >
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 1C6.8 1 1 6.8 1 14C1 16.4 1.7 18.7 2.9 20.6L1 27L7.6 25.1C9.5 26.2 11.7 26.9 14 26.9C21.2 26.9 27 21.1 27 13.9C27 6.8 21.2 1 14 1Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M10 8.5C10 8.5 9.5 8.5 9 9.5C8.5 10.5 8.5 12 10.5 14C12.5 16 14 17.5 16 18C18 18.5 18.5 17.5 19 17C19.5 16.5 20 16 19.5 15.5L18 14C17.5 13.5 17 13.5 16.5 14L15.5 15C15.5 15 14.5 14.5 13 13C11.5 11.5 11 10.5 11 10.5L12 9.5C12.5 9 12.5 8.5 12 8L10.5 6.5C10 6 10 6.5 10 8.5Z" fill="white"/>
+    <!-- Official WhatsApp logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="30" height="30">
+      <path d="M87.608 0C39.295 0 0 39.295 0 87.608c0 15.232 3.94 29.554 10.845 42l-7.1 26.63 27.297-6.96A87.355 87.355 0 0087.608 175.216c48.313 0 87.608-39.295 87.608-87.608S135.921 0 87.608 0z" fill="#25D366"/>
+      <path d="M87.608 15.977c-39.49 0-71.631 32.14-71.631 71.631 0 13.396 3.706 25.927 10.148 36.613l-6.649 24.946 25.56-6.516a71.374 71.374 0 0042.572 13.893c39.49 0 71.631-32.14 71.631-71.631S127.098 15.977 87.608 15.977z" fill="#25D366"/>
+      <path d="M122.386 105.3c-1.653-.826-9.775-4.822-11.294-5.37-1.518-.549-2.623-.826-3.727.826-1.105 1.651-4.278 5.37-5.245 6.473-.967 1.104-1.934 1.242-3.588.414-1.653-.827-6.976-2.572-13.29-8.204-4.912-4.383-8.228-9.796-9.195-11.449-.967-1.652-.103-2.548.727-3.372.747-.744 1.653-1.939 2.48-2.91.826-.968 1.1-1.653 1.65-2.757.551-1.104.276-2.068-.138-2.894-.414-.827-3.727-8.98-5.108-12.292-1.344-3.228-2.71-2.79-3.727-2.84-.965-.048-2.068-.058-3.172-.058-1.105 0-2.895.415-4.414 2.068-1.518 1.652-5.797 5.648-5.797 13.8 0 8.151 5.934 16.027 6.76 17.13.826 1.105 11.672 17.822 28.29 24.993 3.954 1.709 7.04 2.727 9.445 3.492 3.97 1.263 7.582 1.085 10.437.657 3.184-.475 9.775-3.998 11.155-7.858 1.38-3.861 1.38-7.172.967-7.86-.413-.686-1.518-1.1-3.172-1.927z" fill="#FFF"/>
     </svg>
   </a>
 
