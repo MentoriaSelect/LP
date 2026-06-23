@@ -269,9 +269,9 @@ address { font-style: normal; }
 
 .hero__title {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.18;
   color: var(--white);
   margin-block: 1rem 1.5rem;
 }
