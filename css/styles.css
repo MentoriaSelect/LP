@@ -746,7 +746,11 @@ address { font-style: normal; }
   .equipe__grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 }
 
-.equipe__card { position: relative; }
+/* Hover gold border — pseudo-element overlay */
+.equipe__card {
+  position: relative;
+  cursor: default;
+}
 
 .equipe__photo-wrap {
   position: relative;
@@ -755,6 +759,29 @@ address { font-style: normal; }
   border-radius: 20px;
   overflow: hidden;
   background: var(--gray-light);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.equipe__photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--off-white), var(--off-white)) padding-box,
+              linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-light)) border-box;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.equipe__card:hover .equipe__photo-wrap {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(184, 150, 46, 0.18);
+}
+
+.equipe__card:hover .equipe__photo-wrap::after {
+  opacity: 1;
 }
 
 .equipe__photo-wrap img {
@@ -763,6 +790,11 @@ address { font-style: normal; }
   object-fit: cover;
   object-position: top center;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.equipe__card:hover .equipe__photo-wrap img {
+  transform: scale(1.04);
 }
 
 /* Name overlay — gradient + text at bottom of photo */
@@ -793,13 +825,13 @@ address { font-style: normal; }
   margin-top: 0.15rem;
 }
 
-/* Enfermagem — cards menores quadrados arredondados */
+/* Enfermagem — cards maiores, texto fora, centralizados */
 .equipe__enfermagem {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--gray-light);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
@@ -812,40 +844,81 @@ address { font-style: normal; }
   text-transform: uppercase;
   color: var(--gray-3);
   white-space: nowrap;
+  padding-top: 0.5rem;
 }
 
 .equipe__enf-list {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.equipe__enf-card { position: relative; }
+.equipe__enf-card {
+  text-align: center;
+  cursor: default;
+}
 
 .equipe__enf-photo {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 238px;
+  height: 238px;
   border-radius: 20px;
   overflow: hidden;
   background: var(--gray-light);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.equipe__enf-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--off-white), var(--off-white)) padding-box,
+              linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-light)) border-box;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.equipe__enf-card:hover .equipe__enf-photo {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(184, 150, 46, 0.18);
+}
+
+.equipe__enf-card:hover .equipe__enf-photo::after { opacity: 1; }
+
+.equipe__enf-card:hover .equipe__enf-photo img {
+  transform: scale(1.04);
 }
 
 .equipe__enf-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
   display: block;
+  transition: transform 0.5s ease;
 }
 
-.equipe__enf-photo .equipe__overlay {
-  border-radius: 0 0 20px 20px;
+.equipe__enf-name {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-top: 0.6rem;
+  line-height: 1.25;
 }
 
-.equipe__enf-photo .equipe__name { font-size: 0.82rem; }
-.equipe__enf-photo .equipe__role { font-size: 0.6rem; }
+.equipe__enf-role {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.15rem;
+}
 
 /* ============================================================
    DEPOIMENTOS
