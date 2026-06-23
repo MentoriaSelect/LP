@@ -770,6 +770,7 @@ address { font-style: normal; }
   border-top: 1px solid var(--gray-light);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -787,14 +788,15 @@ address { font-style: normal; }
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .equipe__enf-card { position: relative; }
 
 .equipe__enf-photo {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 20px;
   overflow: hidden;
   background: var(--gray-light);
@@ -812,8 +814,8 @@ address { font-style: normal; }
   border-radius: 0 0 20px 20px;
 }
 
-.equipe__enf-photo .equipe__name { font-size: 0.78rem; }
-.equipe__enf-photo .equipe__role { font-size: 0.58rem; }
+.equipe__enf-photo .equipe__name { font-size: 0.82rem; }
+.equipe__enf-photo .equipe__role { font-size: 0.6rem; }
 
 /* ============================================================
    DEPOIMENTOS
