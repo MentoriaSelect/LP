@@ -708,25 +708,23 @@ address { font-style: normal; }
 .equipe__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 1.5rem;
-  margin-top: 3rem;
+  gap: 1rem;
+  margin-top: 2.5rem;
 }
 
 @media (min-width: 640px) {
-  .equipe__grid { grid-template-columns: repeat(4, 1fr); }
+  .equipe__grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 }
 
-.equipe__card {
-  text-align: center;
-}
+.equipe__card { position: relative; }
 
 .equipe__photo-wrap {
+  position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   overflow: hidden;
   background: var(--gray-light);
-  margin-bottom: 0.75rem;
 }
 
 .equipe__photo-wrap img {
@@ -737,31 +735,42 @@ address { font-style: normal; }
   display: block;
 }
 
+/* Name overlay — gradient + text at bottom of photo */
+.equipe__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 0.9rem 0.9rem;
+  background: linear-gradient(to top, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);
+  border-radius: 0 0 20px 20px;
+}
+
 .equipe__name {
   font-family: var(--font-title);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--dark);
-  line-height: 1.3;
+  color: var(--white);
+  line-height: 1.25;
 }
 
 .equipe__role {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 500;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 0.2rem;
+  color: var(--gold-light);
+  margin-top: 0.15rem;
 }
 
-/* Enfermagem — linha menor abaixo do grid */
+/* Enfermagem — cards menores quadrados arredondados */
 .equipe__enfermagem {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--gray-light);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -776,25 +785,19 @@ address { font-style: normal; }
 
 .equipe__enf-list {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.equipe__enf-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.82rem;
-  color: var(--gray-2);
-}
+.equipe__enf-card { position: relative; }
 
 .equipe__enf-photo {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
   overflow: hidden;
   background: var(--gray-light);
-  flex-shrink: 0;
 }
 
 .equipe__enf-photo img {
@@ -802,7 +805,15 @@ address { font-style: normal; }
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  display: block;
 }
+
+.equipe__enf-photo .equipe__overlay {
+  border-radius: 0 0 20px 20px;
+}
+
+.equipe__enf-photo .equipe__name { font-size: 0.78rem; }
+.equipe__enf-photo .equipe__role { font-size: 0.58rem; }
 
 /* ============================================================
    DEPOIMENTOS
