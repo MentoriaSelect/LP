@@ -463,12 +463,18 @@ address { font-style: normal; }
 
 .pilar--featured .pilar__icon { color: var(--gold-light); border-color: var(--gold-light); }
 
-.pilar__logo {
-  width: 130px;
-  height: auto;
-  display: block;
+.pilar__header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   margin-bottom: 0.75rem;
+}
+
+.pilar__logo {
+  width: 100px;
+  height: auto;
   opacity: 0.8;
+  flex-shrink: 0;
 }
 
 .pilar__protocol {
