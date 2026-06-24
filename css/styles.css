@@ -467,7 +467,8 @@ address { font-style: normal; }
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin-bottom: 0.75rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
 }
 
 .pilar__logo {
