@@ -422,14 +422,6 @@ address { font-style: normal; }
   padding: var(--gap) 0;
 }
 
-.pilares__logo {
-  width: 200px;
-  height: auto;
-  margin: 0 auto 0.5rem;
-  display: block;
-  opacity: 0.75;
-}
-
 .pilares__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -470,6 +462,14 @@ address { font-style: normal; }
 }
 
 .pilar--featured .pilar__icon { color: var(--gold-light); border-color: var(--gold-light); }
+
+.pilar__logo {
+  width: 130px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
 
 .pilar__protocol {
   font-size: 0.7rem;
