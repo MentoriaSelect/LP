@@ -1272,14 +1272,6 @@ address { font-style: normal; }
 
 @media (min-width: 900px) { .contato__inner { grid-template-columns: 1fr 1fr; } }
 
-.contato__map {
-  margin-top: 1.5rem;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  opacity: 0.88;
-  border: 1px solid rgba(184,150,46,0.2);
-}
-.contato__map iframe { display: block; }
 
 /* ============================================================
    FOOTER
@@ -1396,13 +1388,22 @@ address { font-style: normal; }
 
 .footer__legal a:hover { color: var(--gold); }
 
+.footer__map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  opacity: 0.75;
+  border: 1px solid rgba(184,150,46,0.15);
+  align-self: end;
+}
+.footer__map iframe { display: block; }
+
 @media (min-width: 640px) {
   .footer__inner { grid-template-columns: repeat(2, 1fr); }
   .footer__bottom { flex-direction: row; justify-content: space-between; text-align: left; }
 }
 
 @media (min-width: 900px) {
-  .footer__inner { grid-template-columns: 2fr 1fr 1.5fr; }
+  .footer__inner { grid-template-columns: 2fr 1fr 1.2fr 1.5fr; }
 }
 
 /* ============================================================
