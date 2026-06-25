@@ -1195,6 +1195,7 @@ address { font-style: normal; }
 }
 
 .contato__detail svg { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+.contato__wa-icon { flex-shrink: 0; margin-top: 2px; filter: brightness(0) saturate(100%) invert(68%) sepia(43%) saturate(600%) hue-rotate(2deg) brightness(95%) contrast(90%); }
 .contato__detail a { color: var(--gold-light); transition: color var(--transition); }
 .contato__detail a:hover { color: var(--white); }
 
