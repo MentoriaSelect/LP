@@ -1391,10 +1391,12 @@ address { font-style: normal; }
 .footer__map {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  opacity: 0.75;
-  border: 1px solid rgba(184,150,46,0.15);
-  align-self: end;
+  opacity: 0.8;
+  border: 1px solid rgba(184,150,46,0.18);
+  align-self: stretch;
+  min-height: 160px;
 }
+.footer__map iframe { height: 100%; min-height: 160px; }
 .footer__map iframe { display: block; }
 
 @media (min-width: 640px) {
@@ -1403,7 +1405,7 @@ address { font-style: normal; }
 }
 
 @media (min-width: 900px) {
-  .footer__inner { grid-template-columns: 2fr 1fr 1.2fr 1.5fr; }
+  .footer__inner { grid-template-columns: 1.6fr 1.4fr 1.8fr; }
 }
 
 /* ============================================================
