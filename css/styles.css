@@ -1273,10 +1273,10 @@ address { font-style: normal; }
 @media (min-width: 900px) { .contato__inner { grid-template-columns: 1fr 1fr; } }
 
 .contato__map {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  opacity: 0.92;
+  opacity: 0.88;
   border: 1px solid rgba(184,150,46,0.2);
 }
 .contato__map iframe { display: block; }
