@@ -1,4 +1,12 @@
 // ============================================================
+// WHATSAPP FLUTUANTE — rastreamento de clique como conversão
+// ============================================================
+document.querySelector('.whatsapp-float')?.addEventListener('click', () => {
+  if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'whatsapp_float' });
+  if (typeof fbq === 'function') fbq('track', 'Lead');
+});
+
+// ============================================================
 // NAV — scroll behavior & mobile menu
 // ============================================================
 const nav    = document.getElementById('nav');
@@ -121,6 +129,10 @@ form?.addEventListener('submit', async e => {
     `WhatsApp: ${telefone.value}\n` +
     (interesse?.value ? `Interesse: ${interesse.options[interesse.selectedIndex].text}` : '')
   );
+
+  // Rastreamento de conversão — dispara antes do redirect pro WhatsApp
+  if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'whatsapp_form' });
+  if (typeof fbq === 'function') fbq('track', 'Lead');
 
   // Brief delay for UX feedback then redirect to WhatsApp
   await new Promise(r => setTimeout(r, 800));
